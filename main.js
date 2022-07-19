@@ -16,7 +16,8 @@ function createWindow () {
     useContentSize: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      zoomFactor: 1.0
+      zoomFactor: 1.0,
+      webviewTag: true
     }
   })
 

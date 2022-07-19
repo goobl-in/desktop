@@ -7,6 +7,6 @@ class Webbrowser extends Application {
     }
 
     load() {
-        return `webbrowser app <iframe src="https://google.com"></iframe>`
+        return `<webview id="foo" src="https://www.github.com/" style="display:inline-flex; width:100%; height:100%"></webview>`
     }
 }
