@@ -12,10 +12,29 @@ function createWindow () {
 
     width: 2560,
     height: 1600,
+
+    useContentSize: true,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      zoomFactor: 1.0
     }
   })
+
+  // mainWindow.webContents.setZoomFactor(1.0)
+  // mainWindow.webContents.session.webRequest.onHeadersReceived(
+  //   {urls: ['*://*/*']},
+  //   (details, callback) => {
+  //     Object.keys(details.responseHeaders).filter(x => x.toLowerCase() === 'x-frame-options')
+  //           .map(x => delete details.responseHeaders[x])
+  
+  //     callback({
+  //       cancel: false,
+  //       responseHeaders: details.responseHeaders,
+  //     })
+  //   },
+  // )
+  // const { webFrame } = require('electron')
+  // webFrame.setZoomFactor(100)
 
   mainWindow.loadFile('index.html')
   mainWindow.webContents.openDevTools()
