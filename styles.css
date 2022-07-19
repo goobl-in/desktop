@@ -77,7 +77,7 @@ html, body {
     /* background-color: #ddd;
     color: #333; */
 
-    background-color: #333; 
+    background-color: #444; 
     color:#ddd;
 
     font-size: small;
@@ -87,15 +87,21 @@ html, body {
 
     display: flex;
     flex-direction: row;
+    justify-content:space-evenly;
     width: 100%;
 }
 
 #search-category-item {
     flex-grow: 1;
+    text-align: center;
+
+    color: #777;
 }
 
 .selected {
-    flex-grow: 1;
+    background-color: #333;
+    font-weight: bold;
+    color: #ddd;
 }
 /* .selected {
     background-color: #333; 
