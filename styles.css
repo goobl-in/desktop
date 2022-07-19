@@ -1,0 +1,53 @@
+
+@font-face {
+    font-family: sf;
+    src: url(assets/fonts/SF-UI-Display-Regular.otf);
+    src: url(assets/fonts/SF-UI-Display-Black.otf);
+    src: url(assets/fonts/SF-UI-Text-Regular.otf);
+    src: url(assets/fonts/SF-Compact-Text-Semibold.otf)
+  }
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: sf;
+}
+
+
+#date-time {
+    float: right;
+}
+
+/*Main layout*/
+
+#apps {
+    float: left;
+}
+
+#app-canvas {
+    background-color: aquamarine;
+    overflow-y: auto;
+    flex-grow: 1;
+    /*flex: 0 1 auto;*/
+}
+
+#system-bar {
+    background-color: #777;
+    color: white;
+
+    height: 1.5em;
+    font-weight: bold;
+}
+#screen {
+    height: 100%; 
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: bisque;
+}
+
+html, body {
+    height: 100%;
+}
