@@ -38,7 +38,7 @@ function createWindow () {
   // webFrame.setZoomFactor(100)
 
   mainWindow.loadFile('index.html')
-  mainWindow.webContents.openDevTools()
+  //mainWindow.webContents.openDevTools()
 }
 
 app.whenReady()
