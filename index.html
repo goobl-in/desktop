@@ -7,6 +7,7 @@
     
     <script src="./de.js"></script>
     <script src="./de/desktop.js"></script>
+    <script src="./de/searchcontroller.js"></script>
     <script src="./de/application.js"></script>
     <script src="./de/applications/calcpro/main.js"></script>
     <script src="./de/applications/filebrowser/main.js"></script>
@@ -30,13 +31,13 @@
 
     <div id="search-center">
       <div id="search-categories">
-        <div class="search-category-item selected item-start">All</div>
-        <div class="search-category-item">Notes</div>
-        <div class="search-category-item">Bookmarks</div>
-        <div class="search-category-item">App context <!--What app displayed provides --> </div>
-        <div class="search-category-item">Menu</div> <!-- Files Edit etc -->
-        <div class="search-category-item">Tabs</div>
-        <div class="search-category-item item-stop">Others <!-- by context app, like search in files or methods --></div>
+        <div data="all"       class="search-category-item search-category-item-selected search-category-item-start">All</div>
+        <div data="notes"     class="search-category-item">Notes</div>
+        <div data="bookmarks" class="search-category-item">Bookmarks</div>
+        <div data="context"   class="search-category-item">App context <!--What app displayed provides --> </div>
+        <div data="menu"      class="search-category-item">Menu</div> <!-- Files Edit etc -->
+        <div data="tabs"      class="search-category-item">Tabs</div>
+        <div data="others"    class="search-category-item search-category-item-stop">Others <!-- by context app, like search in files or methods --></div>
       </div>
       <div id="search-field" contenteditable="true">
         Test

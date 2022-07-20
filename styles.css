@@ -102,10 +102,15 @@ html, body {
     
 }
 
-.item-start {
+.search-category-item-start {
     border-radius: 3px 0px 0px 0px;
 }
-.selected {
+
+.search-category-item-stop {
+    border-radius: 0px 3px 0px 0px;
+}
+
+.search-category-item-selected {
     font-weight: bold;
     color: #ddd;
     background-color: #333;
