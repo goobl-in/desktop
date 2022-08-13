@@ -1,6 +1,26 @@
 
+class SearchRepository {
+    constructor(updateHandler) {
+        this.searchResults = []
+        this.updateHandler = updateHandler
+    }
+    update() {
+        this.updateHandler(this, this.searchResults)
+    }
 
-class DuckduckGoRepository {
+    setKeywoard(keywoard) {
+
+    }
+}
+
+class DummySearchRepository extends SearchRepository {
+
+
+    async searchWithKeyword(keyword) {
+    }
+}
+
+class DuckduckgoSearchRepository extends SearchRepository {
 
     async searchWithKeyword(keyword) {
         return await fetch(`https://sources.debian.org/api/search/${keyword}/`)
@@ -43,10 +63,15 @@ class SeachController {
     constructor() {
         this.setupBindings()
         this.searchEngines = {
-            "others": new DuckduckGoRepository()
+            "others": new DuckduckgoSearchRepository(this.searchRepositoryUpdated),
+            "all": new DummySearchRepository(this.searchRepositoryUpdated)
         }
 
         this.searchEngine = null
+    }
+
+    searchRepositoryUpdated(repository, results) {
+        console.log("results", results)
     }
 
     setupBindings() {
@@ -61,7 +86,6 @@ class SeachController {
         document
             .getElementById("search-field")
             .addEventListener("input", (e) => this.performSearchWithKeyword(e.currentTarget.textContent), false)
-
     }
 
     performSearchWithKeyword(keyword) {
