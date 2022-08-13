@@ -1,3 +1,4 @@
+const apprunner = require("./apprunner")
 
 const {app, BrowserWindow, globalShortcut} = require('electron')
 const path = require('path')
@@ -41,20 +42,41 @@ function createWindow () {
   mainWindow.webContents.openDevTools()
 }
 
+function setupKeyBindings() {
+  globalShortcut.register('Ctrl+R', () => {
+    console.log("overshadow reloading")
+  })
+  globalShortcut.register('Command+Q', () => {
+    console.log('Electron loves global shortcuts!')
+  })
+
+  globalShortcut.register('Esc', () => {
+    console.log("excape pressed")
+  })
+
+  globalShortcut.register('Alt+Shift+Q', () => {
+    console.log('want to quit!')
+    app.quit()
+  })
+}
+
 app.whenReady()
   .then(() => {
-    globalShortcut.unregisterAll()
-    globalShortcut.register('Command+Q', () => {
-      console.log('Electron loves global shortcuts!')
+    //setupKeyBindings()
+  })
+  .then(() => {
+    createWindow()
+    
+    app.on('activate', function () {
+      if (BrowserWindow.getAllWindows().length === 0) createWindow()
+    })
+    
+    app.on('browser-window-focus', function () {
+      setupKeyBindings()
     })
 })
-.then(() => {
-  createWindow()
 
-  app.on('activate', function () {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
-})
+
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()

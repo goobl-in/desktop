@@ -1,5 +1,4 @@
 
-
 class Application {
     constructor() {
         this.icon = "default"
@@ -7,5 +6,17 @@ class Application {
 
     load() {
         return "Empty application"
+    }
+}
+
+
+class PyApplication extends Application {
+    constructor(cwd) {
+        super()
+
+    }
+
+    load(){
+        return "Empty!!"
     }
 }

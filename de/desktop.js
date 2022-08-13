@@ -7,7 +7,7 @@ class Desktop {
 
         this.loadApplications()
         this.startApplications()
-        
+
         setInterval(() => {
             this.updateViewForDateTime(new Date())
         }, 1000)
